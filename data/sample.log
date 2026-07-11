@@ -1,0 +1,5 @@
+2026-07-10 08:00:01 INFO  System Start
+2026-07-10 08:00:15 ERROR Axis1 Servo Alarm
+2026-07-10 08:00:18 WARN  Camera Timeout
+2026-07-10 08:00:30 ERROR MES Connect Failed
+2026-07-10 08:00:35 INFO  Recipe Loaded
