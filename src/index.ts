@@ -1,5 +1,6 @@
 import * as fs from "node:fs";
 import { getArguments } from "./cli.js";
+import { parseLine } from "./parser.js";
 
 const args = getArguments();
 
@@ -16,4 +17,13 @@ console.log("")
 
 const text = fs.readFileSync(args[0], "utf-8");
 
-console.log(text);
+const lines = text.split("\n");
+
+for(const line of lines){
+    console.log("========== Raw ==========");
+    console.log(line);
+    console.log("");
+    console.log("========== Parsed ==========");
+    const parts = parseLine(line);
+    console.log(parts);
+}
