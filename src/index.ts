@@ -1,29 +1,23 @@
-import * as fs from "node:fs";
 import { getArguments } from "./cli.js";
-import { parseLine } from "./parser.js";
+import { readLogFile } from "./reader.js";
+import { parseText } from "./parser.js";
 
-const args = getArguments();
+main();
 
-if (args.length === 0) {
-    console.log("Usage:");
-    console.log("pnpm dev <log file>");
-    process.exit(1);
-}
+function main() {
+    const args = getArguments();
 
-console.log(args);
+    if (args.length === 0) {
+        console.log("Usage:");
+        console.log("pnpm dev <log file>");
+        process.exit(1);
+    }
 
-console.log("Industrial Log Analyzer");
-console.log("")
+    console.log("Industrial Log Analyzer");
+    console.log()
 
-const text = fs.readFileSync(args[0], "utf-8");
+    const text = readLogFile(args[0]);
+    const entries = parseText(text);
 
-const lines = text.split("\n");
-
-for(const line of lines){
-    console.log("========== Raw ==========");
-    console.log(line);
-    console.log("");
-    console.log("========== Parsed ==========");
-    const parts = parseLine(line);
-    console.log(parts);
+    console.log(`Loaded ${entries.length} entries`);
 }

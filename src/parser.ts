@@ -14,3 +14,24 @@ export function parseLine(line: string): LogEntry {
     }
     return entry;
 }
+
+export function parseText(text: string) : LogEntry[] {
+     const entries: LogEntry[] = [];
+
+     const lines = text.split(/\r?\n/);
+
+    for(const line of lines){
+        try {
+
+            const entry = parseLine(line);
+            entries.push(entry);
+        }
+        catch (error) {
+            if (error instanceof Error) {
+                console.warn(error.message);
+            }
+        }
+    }
+
+    return entries;
+}
