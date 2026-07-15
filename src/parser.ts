@@ -8,7 +8,7 @@ export function parseLine(line: string): LogEntry {
     }
 
     const entry: LogEntry = {
-        time: parts[0] + " " + parts[1],
+        time: `${parts[0]} ${parts[1]}`,
         level: parts[2],
         message: parts.slice(3).join(" ")
     }

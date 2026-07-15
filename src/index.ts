@@ -1,6 +1,7 @@
 import { getArguments } from "./cli.js";
 import { readLogFile } from "./reader.js";
 import { parseText } from "./parser.js";
+import {calculateStatistics} from "./statistics.js"
 
 main();
 
@@ -20,4 +21,7 @@ function main() {
     const entries = parseText(text);
 
     console.log(`Loaded ${entries.length} entries`);
+
+    const statisticsResult = calculateStatistics(entries);
+    console.log(statisticsResult);
 }

@@ -3,3 +3,8 @@ export interface LogEntry{
     level: string;
     message: string;
 }
+
+export interface StatisticsResult {
+    total: number;
+    levels: Map<string, number>;
+}
