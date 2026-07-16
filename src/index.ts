@@ -2,6 +2,7 @@ import { getArguments } from "./cli.js";
 import { readLogFile } from "./reader.js";
 import { parseText } from "./parser.js";
 import {calculateStatistics} from "./statistics.js"
+import { formatStatistics } from "./formatter.js";
 
 main();
 
@@ -23,5 +24,5 @@ function main() {
     console.log(`Loaded ${entries.length} entries`);
 
     const statisticsResult = calculateStatistics(entries);
-    console.log(statisticsResult);
+    console.log(formatStatistics(statisticsResult));
 }

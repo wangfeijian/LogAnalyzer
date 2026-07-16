@@ -1,6 +1,6 @@
 import { LogEntry } from "./types.js";
 
-export function parseLine(line: string): LogEntry {
+function parseLine(line: string): LogEntry {
     const parts = line.split(/\s+/);
 
     if (parts.length < 4) {
