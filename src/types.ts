@@ -8,3 +8,8 @@ export interface StatisticsResult {
     total: number;
     levels: Map<string, number>;
 }
+
+export interface CliOptions {
+    file: string;
+    level?: string;
+}
