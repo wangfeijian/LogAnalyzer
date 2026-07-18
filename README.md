@@ -30,3 +30,7 @@ Learning Project
 ## Sprint 6
 
 - 增加通过命令行输入参数来筛选log
+
+## Sprint 7
+
+- 增加分析模块，统计设备和报错信息

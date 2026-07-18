@@ -13,3 +13,8 @@ export interface CliOptions {
     file: string;
     level?: string;
 }
+
+export interface AlarmInfo {
+    device: string;
+    action: string;
+}
