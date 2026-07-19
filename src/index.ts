@@ -5,6 +5,7 @@ import { calculateStatistics } from "./statistics.js"
 import { formatStatistics } from "./formatter.js";
 import { filterByLevel } from "./filter.js";
 import { analyze } from "./analyzer.js";
+import { getTopAlarms } from "./analyzerStatistics.js";
 
 main();
 
@@ -22,9 +23,13 @@ function main() {
             entries = filterByLevel(entries, option.level);
         }
 
-        console.log(analyze(entries));
+        const alarms = analyze(entries);
+        console.log(alarms);
         console.log(`Loaded ${entries.length} entries`);
 
+        const topAlarms = getTopAlarms(alarms);
+        console.log(topAlarms);
+        
         const statisticsResult = calculateStatistics(entries);
         console.log(formatStatistics(statisticsResult));
     } catch (err) {

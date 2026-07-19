@@ -18,3 +18,8 @@ export interface AlarmInfo {
     device: string;
     action: string;
 }
+
+export interface TopAlarm {
+    action: string;
+    count: number;
+}

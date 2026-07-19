@@ -34,3 +34,7 @@ Learning Project
 ## Sprint 7
 
 - 增加分析模块，统计设备和报错信息
+
+## Sprint 8
+
+- 增加报警排行分析代码
