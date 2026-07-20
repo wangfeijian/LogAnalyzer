@@ -1,4 +1,4 @@
-import { LogEntry } from "./types.js";
+import { LogEntry } from "../model/types.js";
 
 function parseLine(line: string): LogEntry {
     const parts = line.split(/\s+/);

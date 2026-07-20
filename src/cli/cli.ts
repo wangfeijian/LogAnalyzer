@@ -1,4 +1,4 @@
-import { CliOptions } from "./types.js";
+import { CliOptions } from "../model/types.js";
 
 export function getArguments() : CliOptions {
     const args = process.argv.slice(2);

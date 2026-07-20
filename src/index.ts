@@ -1,11 +1,11 @@
-import { getArguments } from "./cli.js";
-import { readLogFile } from "./reader.js";
-import { parseText } from "./parser.js";
-import { calculateStatistics } from "./statistics.js"
-import { formatStatistics } from "./formatter.js";
-import { filterByLevel } from "./filter.js";
-import { analyze } from "./analyzer.js";
-import { getTopAlarms } from "./analyzerStatistics.js";
+import { getArguments } from "./cli/cli.js";
+import { readLogFile } from "./parser/reader.js";
+import { parseText } from "./parser/parser.js";
+import { calculateStatistics } from "./analysis/statistics.js"
+import { formatStatistics } from "./formatter/formatter.js";
+import { filterByLevel } from "./parser/filter.js";
+import { analyze } from "./analysis/analyzer.js";
+import { getTopAlarms } from "./analysis/analyzerStatistics.js";
 
 main();
 
@@ -29,7 +29,7 @@ function main() {
 
         const topAlarms = getTopAlarms(alarms);
         console.log(topAlarms);
-        
+
         const statisticsResult = calculateStatistics(entries);
         console.log(formatStatistics(statisticsResult));
     } catch (err) {

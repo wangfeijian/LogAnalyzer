@@ -1,4 +1,4 @@
-import { StatisticsResult } from "./types.js";
+import { StatisticsResult } from "../model/types.js";
 
 export function formatStatistics(result: StatisticsResult) : string {
     const lines: string[] = [];
@@ -11,9 +11,9 @@ export function formatStatistics(result: StatisticsResult) : string {
     }
     
     const errorCount = result.levels.get("ERROR") ?? 0;
-    const rate = result.total === 0 ? 0 : errorCount / result.total;
+    const errorRate = result.total === 0 ? 0 : errorCount / result.total;
     
     lines.push("");
-    lines.push(`Error Rate: ${(rate * 100).toFixed(2)}%`);
+    lines.push(`Error Rate: ${(errorRate * 100).toFixed(2)}%`);
     return lines.join("\n");
 }

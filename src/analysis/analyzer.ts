@@ -1,4 +1,4 @@
-import { AlarmInfo, LogEntry } from "./types.js";
+import { AlarmInfo, LogEntry } from "../model/types.js";
 
 export function analyze(entries: LogEntry[]): AlarmInfo[] {
     return entries.map(parseAlarm);
