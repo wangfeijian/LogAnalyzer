@@ -1,6 +1,6 @@
 export interface LogEntry{
     time: string;
-    level: string;
+    level: LogLevel;
     message: string;
 }
 
@@ -23,3 +23,8 @@ export interface TopAlarm {
     action: string;
     count: number;
 }
+
+export type LogLevel =
+    "INFO"
+    | "WARN"
+    | "ERROR";

@@ -38,3 +38,7 @@ Learning Project
 ## Sprint 8
 
 - 增加报警排行分析代码
+
+## Sprint 9 
+
+- 增加报警类型
