@@ -42,3 +42,7 @@ Learning Project
 ## Sprint 9 
 
 - 增加报警类型
+
+## Sprint 10
+
+The application uses a pipeline architecture:

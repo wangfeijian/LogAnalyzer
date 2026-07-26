@@ -1,11 +1,5 @@
 import { getArguments } from "./cli/cli.js";
-import { readLogFile } from "./parser/reader.js";
-import { parseText } from "./parser/parser.js";
-import { calculateStatistics } from "./analysis/statistics.js"
-import { formatStatistics } from "./formatter/formatter.js";
-import { filterByLevel } from "./parser/filter.js";
-import { analyze } from "./analysis/analyzer.js";
-import { getTopAlarms } from "./analysis/analyzerStatistics.js";
+import { runAnalysis } from "./application/analyzerService.js";
 
 main();
 
@@ -16,22 +10,9 @@ function main() {
         console.log("Industrial Log Analyzer");
         console.log()
 
-        const text = readLogFile(option.file);
-        let entries = parseText(text);
+        const result = runAnalysis(option);
 
-        if (option.level) {
-            entries = filterByLevel(entries, option.level);
-        }
-
-        const alarms = analyze(entries);
-        console.log(alarms);
-        console.log(`Loaded ${entries.length} entries`);
-
-        const topAlarms = getTopAlarms(alarms);
-        console.log(topAlarms);
-
-        const statisticsResult = calculateStatistics(entries);
-        console.log(formatStatistics(statisticsResult));
+        console.log(result.topAlarms);
     } catch (err) {
 
         console.error(err);
