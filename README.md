@@ -45,4 +45,8 @@ Learning Project
 
 ## Sprint 10
 
-The application uses a pipeline architecture:
+- The application uses a pipeline architecture:
+
+## Sprint 11
+
+- 升级readFile为异步模块

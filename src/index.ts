@@ -1,16 +1,19 @@
 import { getArguments } from "./cli/cli.js";
 import { runAnalysis } from "./application/analyzerService.js";
 
-main();
+main()
+.catch(err => {
+    console.error(err);
+})
 
-function main() {
+async function main() {
     try {
         const option = getArguments();
 
         console.log("Industrial Log Analyzer");
         console.log()
 
-        const result = runAnalysis(option);
+        const result = await runAnalysis(option);
 
         console.log(result.topAlarms);
     } catch (err) {

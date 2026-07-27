@@ -6,8 +6,8 @@ import { filterByLevel } from "../parser/filter.js";
 import { parseText } from "../parser/parser.js";
 import { readLogFile } from "../parser/reader.js";
 
-export function runAnalysis(option: CliOptions) {
-    const text = readLogFile(option.file);
+export async function runAnalysis(option: CliOptions) {
+    const text = await readLogFile(option.file);
 
     let entries = parseText(text);
 
