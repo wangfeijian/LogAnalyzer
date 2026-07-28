@@ -50,3 +50,7 @@ Learning Project
 ## Sprint 11
 
 - 升级readFile为异步模块
+
+## Sprint 12
+
+- 增加文件流读取文件
