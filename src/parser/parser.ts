@@ -1,6 +1,24 @@
-import { LogEntry } from "../model/types.js";
+import { LogEntry, LogLevel } from "../model/types.js";
 
-function parseLine(line: string): LogEntry {
+function parseLogLevel(value: string): LogLevel {
+
+    switch (value) {
+
+        case "INFO":
+            return "INFO";
+
+        case "WARN":
+            return "WARN";
+
+        case "ERROR":
+            return "ERROR";
+
+        default:
+            return "INFO";
+    }
+}
+
+export function parseLine(line: string): LogEntry {
     const parts = line.split(/\s+/);
 
     if (parts.length < 4) {
@@ -9,18 +27,18 @@ function parseLine(line: string): LogEntry {
 
     const entry: LogEntry = {
         time: `${parts[0]} ${parts[1]}`,
-        level: parts[2],
+        level: parseLogLevel(parts[2]),
         message: parts.slice(3).join(" ")
     }
     return entry;
 }
 
-export function parseText(text: string) : LogEntry[] {
-     const entries: LogEntry[] = [];
+export function parseText(text: string): LogEntry[] {
+    const entries: LogEntry[] = [];
 
-     const lines = text.split(/\r?\n/);
+    const lines = text.split(/\r?\n/);
 
-    for(const line of lines){
+    for (const line of lines) {
         try {
 
             const entry = parseLine(line);
