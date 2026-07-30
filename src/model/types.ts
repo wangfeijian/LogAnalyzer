@@ -12,6 +12,7 @@ export interface StatisticsResult {
 export interface CliOptions {
     file: string;
     level?: string;
+    stream?: boolean;
 }
 
 export interface AlarmInfo {

@@ -4,6 +4,15 @@ export function getArguments() : CliOptions {
     const args = process.argv.slice(2);
 
     const file = args[0] ?? "";
+
+    const stream = args.includes("--stream");
+    
+    if(stream){
+        return {
+            file: file,
+            stream: stream
+        }
+    }
     const levelIndex = args.indexOf("--level");
 
     let level: string | undefined;
@@ -24,6 +33,8 @@ export function getArguments() : CliOptions {
 
         level = value;
     }
+
+
 
     return {
         file : file,

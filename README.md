@@ -58,3 +58,7 @@ Learning Project
 ## Sprint 13
 
 - 增加流式处理并测试
+
+## Sprint 14
+
+- 增加通过输入参数还选择流式处理
