@@ -62,3 +62,7 @@ Learning Project
 ## Sprint 14
 
 - 增加通过输入参数还选择流式处理
+
+## Sprint 15
+
+- 增加配置文件读取

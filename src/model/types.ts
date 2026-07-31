@@ -29,3 +29,7 @@ export type LogLevel =
     "INFO"
     | "WARN"
     | "ERROR";
+
+export interface AnalyzerConfig {
+    devices:string[];
+}
